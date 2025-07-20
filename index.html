@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusJobs - Student Services Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Tailwind CSS configuration for custom colors and fonts
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4361ee',
+                        secondary: '#3a0ca3',
+                        accent: '#4cc9f0',
+                        success: '#2ec4b6',
+                        warning: '#ff9f1c',
+                        light: '#f8f9fa',
+                        dark: '#212529',
+                        card: '#ffffff',
+                        cardBorder: '#e9ecef',
+                        purple: {
+                            500: '#9d4edd',
+                            600: '#7b2cbf'
+                        },
+                        teal: {
+                            500: '#2ec4b6',
+                            600: '#1a9a8e'
+                        },
+                        orange: {
+                            500: '#ff9f1c',
+                            600: '#e08c0a'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        'button': '0 4px 12px rgba(67, 97, 238, 0.3)',
+                        'hover': '0 10px 25px rgba(0, 0, 0, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-dark">
+    <!-- Header Section -->
+    <header class="bg-white py-4 px-4 sm:px-8 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center justify-between w-full sm:w-auto">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center shadow-lg">
+                        <i class="fas fa-briefcase text-white text-2xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-primary">Campus<span class="text-secondary">Jobs</span></h1>
+                </div>
+                <button id="mobile-menu-btn" class="sm:hidden text-2xl text-gray-600">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu w-full sm:w-auto sm:flex items-center gap-6 mt-4 sm:mt-0 ">
+                <nav class="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-4 sm:mb-0 ">
+                    <a href="#" class="nav-link text-gray-600 hover:text-primary font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors" data-link-name="Home">Home</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-primary font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors" data-link-name="Services">Services</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-primary font-medium py-2 px-4 rounded-lg hover:bg-blue-50 transition-colors" data-link-name="How It Works">How It Works</a>
+                </nav>
+
+                <div class="flex items-center gap-4 flex-col sm:flex-row border-t sm:border-0 pt-4 sm:pt-0">
+                    <div class="relative w-full sm:w-auto">
+                        <div class="search-bar flex items-center bg-gray-50 rounded-lg border border-gray-200 transition-all w-full sm:w-64">
+                            <i class="fas fa-search ml-3 text-gray-400"></i>
+                            <input type="text" id="header-search-input" placeholder="Search services..." class="w-full py-2 px-3 bg-transparent focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-white"></div>
+            <div class="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-white"></div>
+            <div class="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-white"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Find & Hire Skilled Students On Campus</h1>
+                <p class="text-xl max-w-2xl mx-auto lg:mx-0 mb-8 opacity-90">Connect with talented students offering services like CV writing, hair braiding, typing, errands, graphic design and more</p>
+
+                <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto lg:mx-0">
+                    <div class="flex-grow relative">
+                        <div class="search-bar flex items-center bg-white bg-opacity-15 backdrop-blur-sm rounded-lg transition-all">
+                            <i class="fas fa-search ml-4 text-white opacity-70"></i>
+                            <input type="text" id="hero-search-input" placeholder="What service are you looking for?" class="w-full py-4 px-3 bg-transparent focus:outline-none placeholder-white placeholder-opacity-70">
+                        </div>
+                    </div>
+                    <button id="hero-search-btn" class="bg-success hover:bg-teal-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-colors whitespace-nowrap">
+                        Search Services
+                    </button>
+                </div>
+
+                <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
+                    <span class="bg-white bg-opacity-15 px-4 py-2 rounded-full text-sm">CV Writing</span>
+                    <span class="bg-white bg-opacity-15 px-4 py-2 rounded-full text-sm">Hair Braiding</span>
+                    <span class="bg-white bg-opacity-15 px-4 py-2 rounded-full text-sm">Typing Services</span>
+                    <span class="bg-white bg-opacity-15 px-4 py-2 rounded-full text-sm">Graphic Design</span>
+                </div>
+            </div>
+
+            <div class="z-10 flex justify-center">
+                <div class="relative floating">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-warning rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-success rounded-full opacity-20"></div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm p-8 rounded-2xl border border-white border-opacity-30 relative">
+                        <div class="flex flex-col gap-6">
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-90 rounded-xl">
+                                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-primary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Professional CV</h3>
+                                    <p class="text-sm opacity-80">Crafted by students</p>
+                                    <div class="mt-1 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-90 rounded-xl">
+                                <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-fan text-purple-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Hair Styling</h3>
+                                    <p class="text-sm opacity-80">Braids & natural styles</p>
+                                    <div class="mt-1 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-white bg-opacity-90 rounded-xl">
+                                <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-keyboard text-green-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Fast Typing</h3>
+                                    <p class="text-sm opacity-80">Assignments & documents</p>
+                                    <div class="mt-1 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-cardBorder text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">1,200+</div>
+                    <p class="text-gray-600">Active Students</p>
+                </div>
+
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-cardBorder text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">85+</div>
+                    <p class="text-gray-600">Service Categories</p>
+                </div>
+
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-cardBorder text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">5,000+</div>
+                    <p class="text-gray-600">Jobs Completed</p>
+                </div>
+
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-cardBorder text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">4.8/5</div>
+                    <p class="text-gray-600">Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Popular Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse the most requested services from talented students on campus</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="category-card text-center p-8 bg-card rounded-xl shadow-sm border border-cardBorder hover:border-primary">
+                    <div class="category-icon bg-blue-100 text-primary mx-auto">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Typing Services</h3>
+                    <p class="text-gray-600">Fast and accurate typing for assignments</p>
+                    <button class="view-services-btn mt-4 text-sm text-primary font-medium hover:underline" data-category="Typing Services">View Services</button>
+                </div>
+
+                <div class="category-card text-center p-8 bg-card rounded-xl shadow-sm border border-cardBorder hover:border-purple-500">
+                    <div class="category-icon bg-purple-100 text-purple-600 mx-auto">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Hair Braiding</h3>
+                    <p class="text-gray-600">Professional hair styling services</p>
+                    <button class="view-services-btn mt-4 text-sm text-purple-600 font-medium hover:underline" data-category="Hair Braiding">View Services</button>
+                </div>
+
+                <div class="category-card text-center p-8 bg-card rounded-xl shadow-sm border border-cardBorder hover:border-green-500">
+                    <div class="category-icon bg-green-100 text-green-600 mx-auto">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Web Design</h3>
+                    <p class="text-gray-600">Create stunning websites</p>
+                    <button class="view-services-btn mt-4 text-sm text-green-600 font-medium hover:underline" data-category="Web Design">View Services</button>
+                </div>
+
+                <div class="category-card text-center p-8 bg-card rounded-xl shadow-sm border border-cardBorder hover:border-red-500">
+                    <div class="category-icon bg-red-100 text-red-600 mx-auto">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">CV Writing</h3>
+                    <p class="text-gray-600">Professional resume services</p>
+                    <button class="view-services-btn mt-4 text-sm text-red-600 font-medium hover:underline" data-category="CV Writing">View Services</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button id="browse-all-categories-btn" class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-8 rounded-lg border border-primary transition-colors">
+                    Browse All Categories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Listings Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold">Featured Services</h2>
+                    <p class="text-gray-600 mt-2">Connect directly with skilled students</p>
+                </div>
+                <div class="flex gap-3 mt-4 md:mt-0">
+                    <button id="list-service-btn" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors pulse">
+                        List Your Service
+                    </button>
+                    <button id="view-all-services-btn" class="bg-gray-100 hover:bg-gray-200 font-medium py-3 px-6 rounded-lg transition-colors">
+                        View All
+                    </button>
+                </div>
+            </div>
+
+            <div id="service-listings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service cards will be dynamically injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">How CampusJobs Works</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple steps to get things done or earn money on campus</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 bg-white rounded-xl shadow-sm border border-cardBorder">
+                    <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4">Find a Service</h3>
+                    <p class="text-gray-600">Browse through student services or search for what you need</p>
+                </div>
+
+                <div class="text-center p-8 bg-white rounded-xl shadow-sm border border-cardBorder">
+                    <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4">Contact Directly</h3>
+                    <p class="text-gray-600">Message the student via WhatsApp to discuss details</p>
+                </div>
+
+                <div class="text-center p-8 bg-white rounded-xl shadow-sm border border-cardBorder">
+                    <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4">Get It Done</h3>
+                    <p class="text-gray-600">Arrange payment and delivery directly with the student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Success Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from students and clients who've benefited from CampusJobs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card bg-gray-50 p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Sarah Mensah</h3>
+                            <p class="text-gray-600">Graphic Design Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "CampusJobs has transformed my university experience. I've earned over ₵2,500 designing posters and flyers for campus events while building my portfolio. The platform made it easy to connect with clients right on campus."
+                    </p>
+                    <div class="mt-6 text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-gray-50 p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                            <i class="fas fa-user text-green-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Dr. Kwame Osei</h3>
+                            <p class="text-gray-600">University Lecturer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "As a busy lecturer, CampusJobs has been a lifesaver. I've hired students for research assistance, typing, and even event photography. The quality of work has been exceptional, and it's wonderful to support students financially."
+                    </p>
+                    <div class="mt-6 text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action: List Your Service -->
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 md:p-12 inline-block">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Earn Money with Your Skills</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90">Join hundreds of students who are making extra income by offering services on CampusJobs</p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="list-service-now-btn" class="bg-white text-primary font-semibold py-4 px-10 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                        List Your Service Now
+                    </button>
+                    <button id="how-it-works-btn" class="bg-white bg-opacity-20 hover:bg-opacity-30 font-semibold py-4 px-10 rounded-lg transition-colors border border-white border-opacity-30">
+                        How It Works
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Campus<span class="text-accent">Jobs</span></h3>
+                </div>
+                <p class="text-gray-400 mb-6">Connecting students with opportunities to earn and learn.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors" data-social="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors" data-social="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors" data-social="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors" data-social="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">For Students</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="footer-link text-gray-400 hover:text-white transition-colors" data-link-name="List Your Service (Footer)">List Your Service</a></li>
+                    <li><a href="#" class="footer-link text-gray-400 hover:text-white transition-colors" data-link-name="Success Stories (Footer)">Success Stories</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">For Clients</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="footer-link text-gray-400 hover:text-white transition-colors" data-link-name="Browse Services (Footer)">Browse Services</a></li>
+                    <li><a href="#" class="footer-link text-gray-400 hover:text-white transition-colors" data-link-name="How It Works (Footer)">How It Works</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-envelope text-gray-400 mt-1"></i>
+                        <span>contact@campusjobs.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fab fa-whatsapp text-gray-400 mt-1"></i>
+                        <span>+233 20 123 4567</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-gray-400 mt-1"></i>
+                        <span>University Campus, Accra</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-16 pt-6 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; 2024 CampusJobs. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Modal for service listing -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">List Your Service</h3>
+                <button id="close-service-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="service-form">
+                <input type="text" id="service-title" placeholder="Service Title" class="form-input" required>
+                <textarea id="service-description" placeholder="Service Description" class="form-input h-32" required></textarea>
+                <input type="text" id="service-price" placeholder="Price (e.g. ₵15 per CV)" class="form-input" required>
+                <select id="service-category" class="form-input" required>
+                    <option value="">Select Category</option>
+                    <option>Typing Services</option>
+                    <option>Hair Braiding</option>
+                    <option>Web Design</option>
+                    <option>CV Writing</option>
+                    <option>Graphic Design</option>
+                    <option>Photography</option>
+                    <option>Academic Tutoring</option>
+                    <option>Errand Runner</option>
+                    <option>Other</option>
+                </select>
+                <button type="submit" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg w-full mt-4">
+                    Submit via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for profile view -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Profile</h3>
+                <button id="close-profile-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="profile-modal-content">
+                <!-- Profile content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

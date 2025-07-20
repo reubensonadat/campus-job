@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Michael A.",
+    "serviceType": "CV Writing Expert",
+    "description": "Crafting professional and impactful CVs to help you land your dream job. I specialize in tailoring resumes for various industries, highlighting key achievements and optimizing for applicant tracking systems (ATS).",
+    "price": "₵15 per CV",
+    "rating": 4.7,
+    "reviews": 24,
+    "availability": "Available today",
+    "availabilityClass": "text-success",
+    "avatar": "MA",
+    "avatarBg": "linear-gradient(135deg, #4361ee, #4cc9f0)",
+    "featured": true,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/4361ee/ffffff?text=CV+Sample+1",
+        "alt": "CV Sample 1",
+        "description": "Modern Professional CV Design"
+      },
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/3a0ca3/ffffff?text=CV+Sample+2",
+        "alt": "CV Sample 2",
+        "description": "Executive Resume Layout"
+      }
+    ]
+  },
+  {
+    "name": "Tracy N.",
+    "serviceType": "Hair Stylist",
+    "description": "Professional hair braiding services for various styles and occasions. Specializing in box braids, cornrows, twists, and natural hair care.",
+    "price": "₵25 per style",
+    "rating": 4.2,
+    "reviews": 18,
+    "availability": "Weekends only",
+    "availabilityClass": "text-blue-500",
+    "avatar": "TN",
+    "avatarBg": "linear-gradient(135deg, #9d4edd, #c77dff)",
+    "featured": true,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/9d4edd/ffffff?text=Braids+Style+1",
+        "alt": "Braids Style 1",
+        "description": "Elegant Box Braids"
+      },
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/7b2cbf/ffffff?text=Cornrows+Style",
+        "alt": "Cornrows Style",
+        "description": "Intricate Cornrow Design"
+      }
+    ]
+  },
+  {
+    "name": "John D.",
+    "serviceType": "Typing Specialist",
+    "description": "Fast and accurate typing for assignments, reports, and documents. I ensure quick turnaround times and high precision for all your typing needs.",
+    "price": "₵10 per page",
+    "rating": 5.0,
+    "reviews": 32,
+    "availability": "Fast response",
+    "availabilityClass": "text-warning",
+    "avatar": "JD",
+    "avatarBg": "linear-gradient(135deg, #2ec4b6, #cbf3f0)",
+    "featured": true,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "text",
+        "description": "Successfully typed 50-page research paper in 2 days."
+      },
+      {
+        "type": "text",
+        "description": "Transcribed 3 hours of audio lectures with 99% accuracy."
+      }
+    ]
+  },
+  {
+    "name": "Sarah K.",
+    "serviceType": "Graphic Designer",
+    "description": "Creative graphic design services for logos, flyers, posters, and social media content. I bring your ideas to life with stunning visuals.",
+    "price": "₵50 per design",
+    "rating": 4.9,
+    "reviews": 15,
+    "availability": "Available next week",
+    "availabilityClass": "text-orange-500",
+    "avatar": "SK",
+    "avatarBg": "linear-gradient(135deg, #ff9f1c, #ffbf69)",
+    "featured": true,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/ff9f1c/ffffff?text=Logo+Design",
+        "alt": "Logo Design Sample",
+        "description": "Modern Minimalist Logo"
+      },
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/e08c0a/ffffff?text=Flyer+Design",
+        "alt": "Flyer Design Sample",
+        "description": "Event Flyer for Campus Festival"
+      }
+    ]
+  },
+  {
+    "name": "David L.",
+    "serviceType": "Web Developer",
+    "description": "Building responsive and user-friendly websites using modern web technologies. Specializing in front-end development with HTML, CSS, and JavaScript.",
+    "price": "₵200 per website",
+    "rating": 4.5,
+    "reviews": 10,
+    "availability": "By appointment",
+    "availabilityClass": "text-gray-500",
+    "avatar": "DL",
+    "avatarBg": "linear-gradient(135deg, #007bff, #00c6ff)",
+    "featured": false,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "text",
+        "description": "Developed a portfolio website for a fellow student."
+      },
+      {
+        "type": "text",
+        "description": "Created a responsive landing page for a campus club."
+      }
+    ]
+  },
+  {
+    "name": "Grace M.",
+    "serviceType": "Errand Runner",
+    "description": "Reliable and quick errand services around campus and nearby areas. From picking up groceries to delivering documents.",
+    "price": "₵5 per errand",
+    "rating": 4.8,
+    "reviews": 40,
+    "availability": "Available daily",
+    "availabilityClass": "text-success",
+    "avatar": "GM",
+    "avatarBg": "linear-gradient(135deg, #6a0572, #ab3a9a)",
+    "featured": false,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "text",
+        "description": "Delivered textbooks to 10+ students during exam period."
+      },
+      {
+        "type": "text",
+        "description": "Assisted with package pickups from the post office."
+      }
+    ]
+  },
+  {
+    "name": "Daniel O.",
+    "serviceType": "Photography",
+    "description": "Capturing moments for events, portraits, and product photography on campus. High-quality images for all your needs.",
+    "price": "₵70 per hour",
+    "rating": 4.6,
+    "reviews": 12,
+    "availability": "Weekends available",
+    "availabilityClass": "text-blue-500",
+    "avatar": "DO",
+    "avatarBg": "linear-gradient(135deg, #ff6b6b, #ffa500)",
+    "featured": false,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/ff6b6b/ffffff?text=Event+Photo",
+        "alt": "Event Photography Sample",
+        "description": "Campus Event Coverage"
+      },
+      {
+        "type": "image",
+        "src": "https://placehold.co/300x200/ffa500/ffffff?text=Portrait+Photo",
+        "alt": "Portrait Photo Sample",
+        "description": "Student Portrait Session"
+      }
+    ]
+  },
+  {
+    "name": "Emily P.",
+    "serviceType": "Academic Tutor",
+    "description": "Providing tutoring in Mathematics, Physics, and Chemistry for all levels. Helping students understand complex concepts and excel in their studies.",
+    "price": "₵20 per hour",
+    "rating": 4.9,
+    "reviews": 28,
+    "availability": "Flexible hours",
+    "availabilityClass": "text-success",
+    "avatar": "EP",
+    "avatarBg": "linear-gradient(135deg, #1abc9c, #16a085)",
+    "featured": true,
+    "whatsapp": "233201234567",
+    "works": [
+      {
+        "type": "text",
+        "description": "Helped 5 students improve their math grades by a full letter."
+      },
+      {
+        "type": "text",
+        "description": "Conducted group study sessions for final exams."
+      }
+    ]
+  }
+]
