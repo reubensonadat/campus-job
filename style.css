@@ -215,6 +215,9 @@
           flex-direction: column;
         }
         
+        .black{
+            color: black;
+        }
        
         /* Responsive adjustments for smaller screens */
         @media (max-width: 640px) {
